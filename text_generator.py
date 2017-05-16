@@ -1,5 +1,9 @@
 #! /usr/env/python3
 
+"""
+A nice little playaround with chars and strings
+"""
+
 import string
 import random
 

@@ -1,5 +1,7 @@
 #! /usr/env/python3
 
+import unittest
+
 def thief(pin):
 	"""get a four digit number an return a list, with lists of
 		possible constelations of these numbers"""
@@ -25,6 +27,12 @@ def split(number):
 	return list
 
 
+class thiefTest(unittest.TestCase):
+	def test_split(self):
+		self.assertEqual(split(1234), [1,2,3,4])
+
+
 if __name__ == '__main__':
+	#unittest.main()
 	pin = input('plz type in your four digit pin ')
 	print(thief(pin))

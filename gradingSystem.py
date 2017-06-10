@@ -15,12 +15,12 @@ class Grading():
     def login():
         name = input("Username: ")
         pwd = getpass.getpass("Password: ")
-        try:
+        if name in Grading.__admins:
             if Grading.__admins[name] == pwd:
                 return True
             else:
                 return False
-        except KeyError:
+        else:
             return False
             
     def exit():
@@ -69,10 +69,10 @@ class Grading():
     def enterGrades():
         name = input('The name of the Student: ')
         grade = input('Grade for %s: ' % (name))
-        try:
+        if name in Grading.gradingDic:
             if Grading.gradingDic[name]:
                 Grading.gradingDic[name].append(grade)
-        except:
+        else:
             Grading.gradingDic[name] = [grade]
 
 
